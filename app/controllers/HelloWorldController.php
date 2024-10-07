@@ -21,4 +21,9 @@ class HelloWorldController extends Controller
     {
       $this->json(['title' => $this->helloService->hello(), 'name' => 'Salim']);
     }
+
+    public function redirectToJson()
+    {
+        $this->redirectTo('/json.php');
+    }
 }
