@@ -1,3 +1,9 @@
+<?php
+require_once 'fct.inc.php';
+$categories = getCategories();
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,10 +11,9 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- -->
+    <script src="https://kit.fontawesome.com/1038d5e71f.js" crossorigin="anonymous"></script>
     <title><?php echo htmlspecialchars($title); ?></title>
 </head>
 <body>
@@ -18,8 +23,17 @@
             <a class="navbar-brand" href="#">MonSite</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fa-solid fa-bars"></i>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <?php foreach ($categories as $category): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="category=<?php echo $category->getId()?>"><?php echo $category->getName()?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         </div>
     </nav>
 
