@@ -14,7 +14,7 @@ class HelloWorldController extends Controller
     }
     public function index():void
     {
-      $this->view('hello_world', ['title' => $this->helloService->hello(), 'name' => 'Salim']);
+      $this->view('hello_world', $this->helloService->hello(), ['name' => 'Salim']);
     }
 
     public function indexJson():void

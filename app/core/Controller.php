@@ -2,16 +2,15 @@
 
 abstract class Controller {
     protected $viewPath = '../app/views/'; // Chemin vers les vues
-    protected $data = []; // Données à passer à la vue
 
 
-    protected function view($viewName, $data = [], $status = 200) {
-        $this->data = $data;
+    protected function view(string $viewName, string $title = 'Titre de la page', array $data = [], $status = 200) {
+
         $filePath = $this->viewPath . $viewName . '.php';
 
         if (file_exists($filePath)) {
             // Extraire les données pour qu'elles soient disponibles dans la vue comme des variables
-            extract($this->data);
+            extract($data);
             http_response_code($status);
             require $filePath;
         } else {
