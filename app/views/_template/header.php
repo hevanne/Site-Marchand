@@ -1,6 +1,6 @@
 <?php
 require_once 'fct.inc.php';
-$categories = getCategories();
+$navCategories = getCategories();
 ?>
 
 
@@ -27,9 +27,9 @@ $categories = getCategories();
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <?php foreach ($categories as $category): ?>
+                    <?php foreach ($navCategories as $navCategory): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="category=<?php echo $category->getId()?>"><?php echo $category->getName()?></a>
+                            <a class="nav-link" href="category=<?php echo $navCategory->getId()?>"><?php echo $navCategory->getName()?></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>

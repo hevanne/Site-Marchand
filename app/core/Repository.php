@@ -1,4 +1,7 @@
 <?php
+
+require_once '../config/config.php';
+
 class Repository {
     private static $instance = null;  // Instance unique de la classe
     protected $pdo;
@@ -18,7 +21,7 @@ class Repository {
 
     // Fonction pour se connecter à la base de données
     protected function getDatabaseConnection() {
-        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET;
+        $dsn = 'pgsql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME;
 
         try {
             $pdo = new PDO($dsn, DB_USER, DB_PASS);
@@ -37,12 +40,4 @@ class Repository {
     // Empêche le clonage de l'objet
     private function __clone() {}
 
-    // Empêche la désérialisation
-    private function __wakeup() {}
-
 }
-
-/*
-$repository = Repository::getInstance();
-$pdo = $repository->getPDO();  // Accéder à l'objet PDO
- */
