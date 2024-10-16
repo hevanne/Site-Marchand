@@ -36,7 +36,8 @@ CREATE TABLE "User" (
                         id SERIAL PRIMARY KEY,
                         firstname VARCHAR(255) NOT NULL,
                         lastname VARCHAR(255) NOT NULL,
-                        email VARCHAR(255) UNIQUE NOT NULL
+                        email VARCHAR(255) UNIQUE NOT NULL,
+                        password VARCHAR(255) NOT NULL,
 );
 
 -- Création de la table 'Purchase'
@@ -49,3 +50,12 @@ CREATE TABLE Purchase (
                           FOREIGN KEY (article_id) REFERENCES Article(id) ON DELETE CASCADE,
                           FOREIGN KEY (user_id) REFERENCES "User"(id) ON DELETE CASCADE
 );
+
+
+-- Insertion d'un utilisateur standard
+INSERT INTO "User" (firstname, lastname, email, password) VALUES
+    ('John', 'Doe', 'john.doe@example.com', 'securePassword123');
+
+-- Insertion d'un administrateur
+INSERT INTO "User" (firstname, lastname, email, password) VALUES
+    ('root', 'toor', 'ro@ot.fr', 'adminPassword456');
