@@ -1,3 +1,4 @@
 <?php
-require_once '../app/controllers/HelloWorldController.php';
-(new HelloWorldController())->index();
+require_once '../app/controllers/HomeController.php';
+(new HomeController())->index();
+?>

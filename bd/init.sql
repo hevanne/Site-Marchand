@@ -37,7 +37,7 @@ CREATE TABLE "User" (
                         firstname VARCHAR(255) NOT NULL,
                         lastname VARCHAR(255) NOT NULL,
                         email VARCHAR(255) UNIQUE NOT NULL,
-                        password VARCHAR(255) NOT NULL,
+                        password VARCHAR(255) NOT NULL
 );
 
 -- Création de la table 'Purchase'
@@ -59,3 +59,21 @@ INSERT INTO "User" (firstname, lastname, email, password) VALUES
 -- Insertion d'un administrateur
 INSERT INTO "User" (firstname, lastname, email, password) VALUES
     ('root', 'toor', 'ro@ot.fr', 'adminPassword456');
+
+-- Insertion d'une catégorie
+
+INSERT INTO Category (name) VALUES
+    ('Boissons');
+
+-- Insertion d'articles
+
+INSERT INTO Article (name, price, description, stock, category_id) VALUES
+    ('Coca-Cola', 2.50, 'Boisson gazeuse', 100, 1),
+    ('Heineken', 3.50, 'Bière blonde', 50, 1),
+    ('Lipton Ice Tea', 2.00, 'Boisson glacée', 75, 1),
+    ('Orangina', 2.50, 'Boisson gazeuse', 100, 1),
+    ('Perrier', 2.00, 'Eau gazeuse', 100, 1),
+    ('Red Bull', 3.00, 'Boisson énergisante', 50, 1),
+    ('Sprite', 2.50, 'Boisson gazeuse', 100, 1),
+    ('Tropicana', 2.50, 'Jus de fruit', 100, 1),
+    ('Vittel', 1.50, 'Eau plate', 100, 1);

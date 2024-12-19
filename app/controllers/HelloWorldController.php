@@ -14,12 +14,12 @@ class HelloWorldController extends Controller
     }
     public function index():void
     {
-      $this->view('hello_world', $this->helloService->hello(), ['name' => 'Salim']);
+      $this->view('hello_world', $this->helloService->hello(), ['name' => 'Evan']);
     }
 
     public function indexJson():void
     {
-      $this->json(['title' => $this->helloService->hello(), 'name' => 'Salim']);
+      $this->json(['title' => $this->helloService->hello(), 'name' => 'Evan']);
     }
 
     public function redirectToJson()
