@@ -58,6 +58,6 @@ Site-Marchand est un site web marchand permettant la gestion d'articles et d'uti
 ## Auteur
 
 Développé par Evan Cnaepelnickx.  
-Sur base de projet de M. Salim Khraimeche dans le cadre scolaire.
+Sur base de projet de [M. Salim Khraimeche](https://www.github.com/salimkhr) dans le cadre scolaire.
 
 Ce projet n'est pas complètement terminé, des bugs ou des parties manquantes peuvent être présents.
